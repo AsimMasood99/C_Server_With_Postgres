@@ -83,7 +83,9 @@ int main() {
 
     printf("Listning on port %d ...\n", PORT);
 
-    PGconn *conn = PQconnectdb("user=postgres dbname=testdb");
+    // PGconn *conn = PQconnectdb("user=postgres dbname=testdb");
+    PGconn *conn = PQconnectdb("host=db user=postgres password=postgres dbname=testdb");
+
 
     if (PQstatus(conn) == CONNECTION_BAD) {
         fprintf(stderr, "Connection to database failed: %s\n",
