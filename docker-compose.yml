@@ -12,6 +12,7 @@ services:
       - mynet
 
   server:
+    image: asimmasood707/server:latest
     build: ./server
     depends_on:
       - db
@@ -21,6 +22,7 @@ services:
       - mynet
       
   client:
+    image: asimmasood707/client:latest
     build: ./client
     ports:
       - "3000:80"
